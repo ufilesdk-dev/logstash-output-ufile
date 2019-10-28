@@ -9,6 +9,7 @@
 2. 安装[```logstash-7.3.0```](https://www.elastic.co/guide/en/logstash/current/installing-logstash.html#installing-binary)
 3. 获取插件```logstash-output-ufile-0.0.1.tar.gz```, 通过命令``` tar -xzvf logstash-output-ufile-0.0.1.tar.gz``` 解压后拷贝```logstash-output-ufile-0.0.1```到```logstash-7.3.0/vendor/bundle/jruby/2.5.0/gems/```
 4. 修改文件```logstash-7.3.0/Gemfile```, 添加 ``` gem "logstash-output-ufile", :path => "vendor/bundle/jruby/2.5.0/gems/logstash-output-ufile-0.0.1" ```
+5. 启动命令示例: bin/logstash -f mypipeline.conf (mypipeline.conf替换为自己的配置文件), 详细的请参考logstash官网
 
 ## 配置说明
 1. 配置格式说明同[S3 output plugin](https://www.elastic.co/guide/en/logstash/6.2/plugins-outputs-s3.html), 除了几个uf开头的字段不一样以外, 其它都一样.
@@ -45,6 +46,7 @@ output {
   * uf_region表示地区, 根据申请的bucket地域不同, 如果在上海二区申请那么就是ch-sh2, 同理ch-bj对应北京的bucket
   * 其它参数同 [S3 output plugin](https://www.elastic.co/guide/en/logstash/6.2/plugins-outputs-s3.html)
   * 可以根据自己的需要自行添加、删除、修改相关参数
+
 
 ## 常见问题说明
 * 创建令牌的时候要授权配置的bucekt
