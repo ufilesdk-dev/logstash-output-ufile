@@ -7,7 +7,7 @@
 ## 安装步骤
 1. 下载[```logstash-7.3.0```](https://artifacts.elastic.co/downloads/logstash/logstash-7.3.0.tar.gz)
 2. 安装[```logstash-7.3.0```](https://www.elastic.co/guide/en/logstash/current/installing-logstash.html#installing-binary)
-3. 获取插件```logstash-output-ufile-0.0.1.tar.gz```, 通过命令``` tar -xzvf logstash-output-ufile-0.0.1.tar.gz``` 解压后拷贝```logstash-output-ufile-0.0.1```到```logstash-7.3.0/vendor/bundle/jruby/2.5.0/gems/```
+3. 获取插件[```logstash-output-ufile-0.0.1.tar.gz```](https://github.com/ufilesdk-dev/logstash-output-ufile/releases/download/v1.0/logstash-output-ufile-0.0.1.tar.gz), 通过命令``` tar -xzvf logstash-output-ufile-0.0.1.tar.gz``` 解压后拷贝```logstash-output-ufile-0.0.1```到```logstash-7.3.0/vendor/bundle/jruby/2.5.0/gems/```
 4. 修改文件```logstash-7.3.0/Gemfile```, 添加 ``` gem "logstash-output-ufile", :path => "vendor/bundle/jruby/2.5.0/gems/logstash-output-ufile-0.0.1" ```
 5. 启动命令示例: bin/logstash -f mypipeline.conf (mypipeline.conf替换为自己的配置文件), 详细的请参考logstash官网
 
